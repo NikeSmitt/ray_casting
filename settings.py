@@ -10,24 +10,29 @@ HALF_HEIGHT = HEIGHT // 2
 
 player_pos = (HALF_WIDTH, HALF_HEIGHT)
 player_angle = 0
-player_speed = 3
+player_speed = 1
 
 # map
 TILE = 100
 
 FPS = 60
 
+# minimap
+MAP_SCALE = 5
+MAP_TILE = TILE // MAP_SCALE
+MAP_POS = (0, HEIGHT - HEIGHT // MAP_SCALE)
+
 # ray casting settings
 FOV = math.pi / 3
 HALF_FOV = FOV / 2
 
-NUM_RAYS = 120
+NUM_RAYS = 300
 
 MAX_DEPTH = 800
 DELTA_ANGLE = FOV / NUM_RAYS
 
 DIST = NUM_RAYS / (2 * math.tan(HALF_FOV))
-PROJ_COEF = 3 * DIST * TILE
+PROJ_COEF = DIST * TILE
 SCALE = WIDTH // NUM_RAYS
 
 BLACK = (0, 0, 0)
